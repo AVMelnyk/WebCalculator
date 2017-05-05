@@ -1,0 +1,15 @@
+table{
+	border-collapse: collapse;
+	border: 2px black solid;
+}
+td{
+	font-size: 30px;
+	height: 50px;
+	text-align: center;
+	width: 100px;
+	border-collapse: collapse;
+	border: 2px black solid;
+}
+a{
+	text-decoration: none;
+}
