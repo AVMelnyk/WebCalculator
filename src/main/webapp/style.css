@@ -1,8 +1,8 @@
 table{
 	border-collapse: collapse;
-	border: 2px black solid;
+	border: 3px gray solid;
 	margin: auto;
-	background-color: gray;
+	background-color: lightgray;
 }
 td{
 	font-size: 30px;
@@ -10,7 +10,7 @@ td{
 	text-align: center;
 	width: 100px;
 	border-collapse: collapse;
-	border: 2px black solid;
+	border: 2px gray solid;
 }
 .field{
 	font-size: 22px;
