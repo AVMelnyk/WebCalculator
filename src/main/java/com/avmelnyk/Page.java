@@ -3,6 +3,7 @@ package com.avmelnyk;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.basic.MultiLineLabel;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.Model;
@@ -102,30 +103,55 @@ public class Page extends WebPage{
                     message = message.concat("9");
             }
         });
+        add(new Link("null") {
+            @Override
+            public void onClick() {
+                
+            }
+        });
+        add(new Link("cancel") {
+            @Override
+            public void onClick() {
+            	//message = message.concat("\n / ");
+            }
+        });
+        
         add(new Link("divide") {
             @Override
             public void onClick() {
-            	message = message.concat(" / ");
+            	message = message.concat("\n / ");
             }
         });
         add(new Link("multiply") {
             @Override
             public void onClick() {
-            	message = message.concat(" x ");
+            	message = message.concat("\n x ");
             }
         });
         add(new Link("minus") {
             @Override
             public void onClick() {
-            	message = message.concat(" - ");
+            	message = message.concat("\n - ");
+            }
+        });
+        add(new Link("dot") {
+            @Override
+            public void onClick() {
+            	//message = message.concat("\n + ");
+            }
+        });
+        add(new Link("equally") {
+            @Override
+            public void onClick() {
+            	//message = message.concat("\n + ");
             }
         });
         add(new Link("plus") {
             @Override
             public void onClick() {
-            	message = message.concat(" + ");
+            	message = message.concat("\n + ");
             }
         });
-        add(new Label("label", new PropertyModel(this, "message")));
+        add(new MultiLineLabel("label", new PropertyModel(this, "message")));
     }
 }
