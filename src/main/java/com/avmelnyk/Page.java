@@ -9,6 +9,10 @@ import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
 public class Page extends WebPage{
     String message = "0";
     public Page() {
@@ -70,7 +74,7 @@ public class Page extends WebPage{
                     message = "6";
                 }
                 else
-                    message = message.concat("7");
+                    message = message.concat("6");
             }
         });
         add(new Link("link7") {
@@ -112,7 +116,12 @@ public class Page extends WebPage{
         add(new Link("cancel") {
             @Override
             public void onClick() {
-            	//message = message.concat("\n / ");
+            	if (message.length()>1) {
+            		 message = message.substring(0, message.length()-1);
+            	}
+            	else{
+            		message = "0";
+            	}
             }
         });
         
@@ -137,13 +146,13 @@ public class Page extends WebPage{
         add(new Link("dot") {
             @Override
             public void onClick() {
-            	//message = message.concat("\n + ");
+            	message = message.concat(".");
             }
         });
         add(new Link("equally") {
             @Override
             public void onClick() {
-            	//message = message.concat("\n + ");
+            	message = message.concat("=");
             }
         });
         add(new Link("plus") {

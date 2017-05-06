@@ -1,6 +1,8 @@
 table{
 	border-collapse: collapse;
 	border: 2px black solid;
+	margin: auto;
+	background-color: gray;
 }
 td{
 	font-size: 30px;
@@ -10,6 +12,9 @@ td{
 	border-collapse: collapse;
 	border: 2px black solid;
 }
-a{
-	text-decoration: none;
+.field{
+	font-size: 22px;
+}
+.cancel{
+	color: #FF8C00;
 }
