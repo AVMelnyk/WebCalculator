@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Page extends WebPage{
-    String output = "0";
+    static String output = "0";
     public Page() {
         add(new Link("link") {
             @Override
@@ -115,7 +115,14 @@ public class Page extends WebPage{
             @Override
             public void onClick() {
             	if (output.length()>1) {
-            		 output = output.substring(0, output.length()-1);
+            		String[] numbers = output.split(" ");
+            		if(isNumeric(numbers[numbers.length-1])){
+            			output = output.substring(0, output.length()-1);
+            		}
+            			
+            		else
+            			output  = output.substring(0, output.length()-3);
+            		 
             	}
             	else{
             		output = "0";
@@ -153,7 +160,7 @@ public class Page extends WebPage{
         add(new Link("equally") {
             @Override
             public void onClick() {
-            	output = output.concat(" = ");
+            	output = getResult();
             }
         });
         add(new Link("plus") {
@@ -165,6 +172,36 @@ public class Page extends WebPage{
         });
         add(new MultiLineLabel("label", new PropertyModel(this, "output")));
     }
+    public static String getResult(){
+		
+    	String[] numbers = output.split(" ");
+    	Double result = new Double("0");
+    	for(int i = 1; i <numbers.length-1;i =i+2){
+    		if(numbers[i].equals("+")){
+    			result = Double.parseDouble(numbers[i-1]) + Double.parseDouble(numbers[i+1]);
+    			
+    		}
+    		else if(numbers[i].equals("-")){
+    			result = Double.parseDouble(numbers[i-1]) - Double.parseDouble(numbers[i+1]);
+    			
+    			
+    		}
+    		else if(numbers[i].equals("x")){
+    			result = Double.parseDouble(numbers[i-1]) * Double.parseDouble(numbers[i+1]);
+    			
+    			
+    		}
+    		else if(numbers[i].equals("/")){
+    			result = Double.parseDouble(numbers[i-1]) / Double.parseDouble(numbers[i+1]);
+    			
+    		}
+    		
+    		numbers[i+1] = result.toString();
+    	
+    	}
+    	return(result.toString());
+	}    	
+    
     
     public static String replaceOperator(String output, String operator){
     	String lastElem = output.substring(output.length() -1, output.length());
