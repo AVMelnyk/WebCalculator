@@ -1,20 +1,24 @@
 table{
-	border-collapse: collapse;
+	
 	border: 3px gray solid;
 	margin: auto;
-	background-color: lightgray;
+	background-color: white;
 }
 td{
 	font-size: 30px;
 	height: 50px;
 	text-align: center;
 	width: 100px;
-	border-collapse: collapse;
 	border: 2px gray solid;
 }
 .field{
 	font-size: 22px;
+	background: #f5f5ef;
 }
 .cancel{
 	color: #FF8C00;
+	background: lightgray;
+}
+.operator{
+	background:lightgray;
 }
