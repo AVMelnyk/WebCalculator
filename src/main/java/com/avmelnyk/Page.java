@@ -16,7 +16,7 @@ public class Page extends WebPage{
     public Page() {
         add(new Link("link") {
             @Override
-            public void onClick() {
+            public  void onClick() {
                 if (output.equals("0")){
                     output = "1";
                 }
@@ -27,7 +27,7 @@ public class Page extends WebPage{
         
         add(new Link("link2") {
             @Override
-            public void onClick() {
+            public   void onClick() {
                 if (output.equals("0")){
                     output = "2";
                 }
@@ -37,7 +37,7 @@ public class Page extends WebPage{
         });
         add(new Link("link3") {
             @Override
-            public void onClick() {
+            public   void onClick() {
                 if (output.equals("0")){
                     output = "3";
                 }
@@ -47,7 +47,7 @@ public class Page extends WebPage{
         });
         add(new Link("link4") {
             @Override
-            public void onClick() {
+            public  void onClick() {
                 if (output.equals("0")){
                     output = "4";
                 }
@@ -57,7 +57,7 @@ public class Page extends WebPage{
         });
         add(new Link("link5") {
             @Override
-            public void onClick() {
+            public  void onClick() {
                 if (output.equals("0")){
                     output = "5";
                 }
@@ -67,7 +67,7 @@ public class Page extends WebPage{
         });
         add(new Link("link6") {
             @Override
-            public void onClick() {
+            public   void onClick() {
                 if (output.equals("0")){
                     output = "6";
                 }
@@ -77,7 +77,7 @@ public class Page extends WebPage{
         });
         add(new Link("link7") {
             @Override
-            public void onClick() {
+            public   void onClick() {
                 if (output.equals("0")){
                     output = "7";
                 }
@@ -97,7 +97,7 @@ public class Page extends WebPage{
         });
         add(new Link("link9") {
             @Override
-            public void onClick() {
+            public   void onClick() {
                 if (output.equals("0")){
                     output = "9";
                 }
@@ -107,13 +107,13 @@ public class Page extends WebPage{
         });
         add(new Link("null") {
             @Override
-            public void onClick() {
+            public  void onClick() {
             	output= output.concat("0");
             }
         });
         add(new Link("cancel") {
             @Override
-            public void onClick() {
+            public  void onClick() {
             	if (output.length()>1) {
             		String[] numbers = output.split(" ");
             		if(isNumeric(numbers[numbers.length-1])){
@@ -133,7 +133,7 @@ public class Page extends WebPage{
         add(new Link("divide") {
         	
             @Override
-            public void onClick() {
+            public  void onClick() {
             	String divide = " / ";
 	        	output = replaceOperator(output, divide);
         }});
@@ -146,20 +146,20 @@ public class Page extends WebPage{
         });
         add(new Link("minus") {
             @Override
-            public void onClick() {
+            public   void onClick() {
             	String minus = " - ";
             	output = replaceOperator(output, minus);
             }
         });
         add(new Link("dot") {
             @Override
-            public void onClick() {
+            public  void onClick() {
             	output = output.concat(".");
             }
         });
         add(new Link("equally") {
             @Override
-            public void onClick() {
+            public  void onClick() {
             	output = getResult();
             }
         });
